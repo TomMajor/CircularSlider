@@ -18,6 +18,11 @@ import UIKit
 }
 
 
+// Note: You won't be able to see your default values listed in the attributes inspector in IB, but they are applied to the IB view anyway
+// This is a consequence of how Swift's initialization works, see
+// https://www.reddit.com/r/iOSProgramming/comments/5tutt5/ib_is_ignoring_default_values_defined_in/
+
+
 @IBDesignable
 open class CircularSlider: UIView {
     
@@ -46,7 +51,7 @@ open class CircularSlider: UIView {
     fileprivate var backingValue: Float = 0
     fileprivate var backingKnobAngle: CGFloat = 0
     fileprivate var rotationGesture: RotationGestureRecognizer?
-    fileprivate var backingFractionDigits: NSInteger = 2
+    fileprivate var backingFractionDigits: NSInteger = 1
     fileprivate let maxFractionDigits: NSInteger = 4
     fileprivate var startAngle: CGFloat {
         return -CGFloat(Double.pi/2) + radiansOffset
@@ -90,7 +95,7 @@ open class CircularSlider: UIView {
         }
     }
     @IBInspectable
-    open var radiansOffset: CGFloat = 0 {
+    open var radiansOffset: CGFloat = 0.25 {
         didSet {
             setNeedsDisplay()
         }
@@ -119,7 +124,7 @@ open class CircularSlider: UIView {
     @IBInspectable
     open var minimumValue: Float = 0
     @IBInspectable
-    open var maximumValue: Float = 500
+    open var maximumValue: Float = 100
     @IBInspectable
     open var lineWidth: CGFloat = 5 {
         didSet {
@@ -140,7 +145,7 @@ open class CircularSlider: UIView {
         }
     }
     @IBInspectable
-    open var pgHighlightedColor: UIColor = UIColor.green {
+    open var pgHighlightedColor: UIColor = UIColor(colorLiteralRed: 0.4, green: 0.4, blue: 1.0, alpha: 1.0) {
         didSet {
             appearanceProgressLayer()
         }
@@ -182,13 +187,13 @@ open class CircularSlider: UIView {
         }
     }
     @IBInspectable
-    open var titleColor: UIColor = UIColor.yellow {
+    open var titleColor: UIColor = UIColor.orange {
         didSet {
             titleLabel.textColor = titleColor
         }
     }
     @IBInspectable
-    open var textColor: UIColor = UIColor.yellow {
+    open var textColor: UIColor = UIColor(colorLiteralRed: 0.4, green: 0.4, blue: 1.0, alpha: 1.0) {
         didSet {
             textfield.textColor = textColor
             divisaLabel.textColor = textColor
@@ -232,7 +237,7 @@ open class CircularSlider: UIView {
     
     // MARK: - drawing methods
     override open func draw(_ rect: CGRect) {
-        print("drawRect")
+        //print("drawRect")
         backgroundCircleLayer.bounds = bounds
         progressCircleLayer.bounds = bounds
         knobLayer.bounds = bounds
@@ -275,7 +280,11 @@ open class CircularSlider: UIView {
         configureKnobLayer()
         configureGesture()
         configureFont()
-    }
+        titleLabel.textColor = titleColor
+        textfield.textColor = textColor
+        divisaLabel.textColor = textColor
+        lineView.isHidden = !showLine
+     }
     
     fileprivate func configureIcon() {
         iconImageView.image = icon
