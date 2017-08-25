@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     // MARK: - methods
     fileprivate func setupCircularSlider() {
         circularSlider.delegate = self
+        //circularSlider.textColor = UIColor.blue
     }
     
     fileprivate func setupTapGesture() {

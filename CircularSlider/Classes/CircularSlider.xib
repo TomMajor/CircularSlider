@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +16,7 @@
                 <outlet property="divisaLabel" destination="6JM-fe-ic7" id="2uW-TT-jwC"/>
                 <outlet property="iconCenterY" destination="AWc-qZ-5Cv" id="wmC-6i-pML"/>
                 <outlet property="iconImageView" destination="B0H-VT-YPT" id="k5R-Lp-pYy"/>
+                <outlet property="lineView" destination="q9X-Rc-puM" id="msE-Pa-JGR"/>
                 <outlet property="textfield" destination="ZBy-16-9Op" id="EGp-oD-0kh"/>
                 <outlet property="titleLabel" destination="Lbn-0y-dio" id="yiJ-t3-HUO"/>
             </connections>
@@ -41,11 +42,11 @@
                             <color key="textColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oxz-sc-6OG" userLabel="Centered View">
-                            <rect key="frame" x="50" y="38" width="159.5" height="48"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxz-sc-6OG" userLabel="Centered View">
+                            <rect key="frame" x="45" y="38" width="170.5" height="48"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20,00" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBy-16-9Op">
-                                    <rect key="frame" x="20" y="0.0" width="111" height="48"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20,00" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBy-16-9Op">
+                                    <rect key="frame" x="20" y="0.0" width="106" height="48"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="KRF-FF-zcp"/>
@@ -62,8 +63,8 @@
                                         <outlet property="delegate" destination="-1" id="nyW-nn-ScH"/>
                                     </connections>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JM-fe-ic7">
-                                    <rect key="frame" x="139" y="12" width="16.5" height="32.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JM-fe-ic7">
+                                    <rect key="frame" x="134" y="12" width="16.5" height="32.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="27"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -76,7 +77,7 @@
                                 <constraint firstItem="ZBy-16-9Op" firstAttribute="leading" secondItem="Oxz-sc-6OG" secondAttribute="leading" constant="20" symbolic="YES" id="Qs5-ew-VLA"/>
                                 <constraint firstItem="6JM-fe-ic7" firstAttribute="leading" secondItem="ZBy-16-9Op" secondAttribute="trailing" constant="8" symbolic="YES" id="fA0-Sb-J01"/>
                                 <constraint firstItem="6JM-fe-ic7" firstAttribute="bottom" secondItem="ZBy-16-9Op" secondAttribute="bottom" id="fga-yz-Yi0"/>
-                                <constraint firstAttribute="trailing" secondItem="6JM-fe-ic7" secondAttribute="trailing" constant="4" id="qwZ-zA-Oor"/>
+                                <constraint firstAttribute="trailing" secondItem="6JM-fe-ic7" secondAttribute="trailing" constant="20" symbolic="YES" id="qwZ-zA-Oor"/>
                                 <constraint firstAttribute="bottom" secondItem="ZBy-16-9Op" secondAttribute="bottom" id="xuZ-18-YhY"/>
                             </constraints>
                             <variation key="default">
